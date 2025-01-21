@@ -6,11 +6,11 @@ const card2 = () => {
 
     return(
         <div className = "profile-card">
-            <div className = "profiel-card__image">
+            <div className = "profile-card__image">
                 <img src={img} alt="profile-pic"/>
             </div>
 
-            <div className = "profiel-card__content">
+            <div className = "profile-card__content">
                 <p>{name}</p>
                 <p>{title}</p>
                 <p>{email}</p>
