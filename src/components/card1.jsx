@@ -1,4 +1,7 @@
-import img from "../assets/profilePic1"
+import img from "../assets/profilePic1.webp"
+import "../styles/cards.css"
+
+
 const Card1 = () => {
     const name = "jon"
     const title = "SE"

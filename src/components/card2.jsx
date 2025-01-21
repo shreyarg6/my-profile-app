@@ -1,8 +1,8 @@
-import img from "../assets/profilePic2"
-const card2 = () => {
-    const name = "jon"
+import img from "../assets/profilePic2.webp"
+const Card2 = () => {
+    const name = "jane"
     const title = "SE"
-    const email = "jon.com"
+    const email = "jane.com"
 
     return(
         <div className = "profile-card">

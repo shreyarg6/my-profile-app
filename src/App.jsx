@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import About from "../components/About"
-import Navbar from "../components/Navbar"
-import Card1 from "../components/Card1"
-import Card2 from "../components/Card2"
+import About from "./components/About.jsx"
+import Navbar from "./components/Navbar.jsx"
+import Card1 from "./components/Card1.jsx"
+import Card2 from "./components/Card2.jsx"
 
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
           <div className = "container">
             <div calassName = "profile-cards">
               <Card1 />
-              <Card1 />
+              <Card2 />
             </div>
           </div>
         </div>

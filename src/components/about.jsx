@@ -1,9 +1,10 @@
 const About = () => {
     return(
-        <div>
+        <nav className="about">
             <h1>About</h1>
             <p1>This is about the profile app.</p1>
-        </div>
-    );
+        </nav>
+    )
 }
+
 export default About;
