@@ -1,5 +1,5 @@
-import img from "../assets"
-const card1 = () => {
+import img from "../assets/profilePic1"
+const Card1 = () => {
     const name = "jon"
     const title = "SE"
     const email = "jon.com"
@@ -21,4 +21,4 @@ const card1 = () => {
 
     );
 }
-export default card1;
+export default Card1;
