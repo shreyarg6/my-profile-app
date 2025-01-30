@@ -1,19 +1,18 @@
-/*Basic reset */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     box-sizing: border-box;
-    padding-top: 80px; /* Space for navbar */
+    padding-top: 80px; 
 }
 
 .gallery {
     display: flex;
-    flex-wrap: nowrap; /* Ensure cards are aligned horizontally */
-    gap: 40px; /* Space between cards */
-    justify-content: center; /* Center cards horizontally */
-    align-items: center; /* Center cards vertically */
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    flex-wrap: nowrap; 
+    gap: 40px;
+    justify-content: center; 
+    align-items: center; 
+    overflow-x: auto; 
     padding: 20px;
 }
 
@@ -78,7 +77,6 @@ body {
     text-decoration: underline;
 }
 
-/* Navbar styles */
 .navbar {
     position: fixed;
     top: 0;
@@ -90,7 +88,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 40px; /* Added padding inside navbar */
+    padding: 10px 40px; 
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

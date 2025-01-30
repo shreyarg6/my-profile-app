@@ -24,33 +24,81 @@ const App = () => {
     }
   ];
 
-  const [clicked, setClicked] =useState(false);
-  const handleClick = () => {
-    setClicked(!clicked);
+  // get titles
+  const titles = [...new Set(profiles.map((profile) => profile.title))];
+
+  const [title, setTitle] = useState("");
+  //update the title on change of the drowndrop
+  const handleTitleChange = (event) => {
+    setTitle(event.target.value);
+    console.log(event.target.value);
   };
 
+  const [search, setSearch] = useState("");
+  //update the search on change of the input
+  const handleSearchChange = (event) => {
+    setSearch(event.target.value);
+  };
+
+  //clear the title and search
+  const handleClear = () => {
+    setTitle("");
+    setSearch("");
+  };
+
+  //filter the profiles based on the title
+  const filtedProfiles = profiles.filter(
+    (profile) =>
+      (title === "" || profile.title === title) &&
+      profile.name.toLowerCase().includes(search.toLowerCase())
+  );
   return (
     <>
       <header>
         <Navbar />
       </header>
-
       <main>
         <Wrapper>
-        <h1> Profile App</h1>
+          <h1>Profile App</h1>
         </Wrapper>
-
         <Wrapper>
           <About />
         </Wrapper>
-
         <Wrapper>
-          <div className = "profile-cards">
-              {profiles.map(profile => <Card key={profile.email} {...profile} />)}
+          <div className="filter-wrapper">
+            <div className="filter--select">
+              <label htmlFor="title-select">Select a title:</label>
+              <select
+                id="title-select"
+                onChange={handleTitleChange}
+                value={title}
+              >
+                <option value="">All</option>
+                {titles.map((title) => (
+                  <option key={title} value={title}>
+                    {title}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="filter--search">
+              <label htmlFor="search">Search by name:</label>
+              <input
+                type="text"
+                id="search"
+                onChange={handleSearchChange}
+                value={search}
+              />
+            </div>
+            <button onClick={handleClear}>Clear</button>
+          </div>
+          <div className="profile-cards">
+            {filtedProfiles.map((profile) => (
+              <Card key={profile.email} {...profile} />
+            ))}
           </div>
         </Wrapper>
       </main>
-
     </>
   );
 };
