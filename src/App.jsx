@@ -9,6 +9,7 @@ import image5 from "./assets/nico.webp";
 import Card from "./components/Card";
 import Wrapper from "./components/Wrapper.jsx";
 import { useState } from "react";
+import ProfileForm from "./components/ProfileForm.jsx";
 
 const App = () => {
   const profiles =[
@@ -105,6 +106,9 @@ return (
 
       <Wrapper>
         <About />
+      </Wrapper> 
+      <Wrapper>
+        <ProfileForm />
       </Wrapper> 
 
       <Wrapper>
