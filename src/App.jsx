@@ -10,9 +10,11 @@ import Card from "./components/Card";
 import Wrapper from "./components/Wrapper.jsx";
 import { useState } from "react";
 import ProfileForm from "./components/ProfileForm.jsx";
+import { useEffect } from "react";
+import { use } from "react";
 
 const App = () => {
-  const profiles =[
+  //const profiles =[
     {
       img: image1,
       name: 'Percy Jackson',
@@ -43,50 +45,60 @@ const App = () => {
       title: 'Software Engineer',
       email: 'ndangelo04@gmail.com.com'
     }
-  ];
+  //];
 
-// variable to store the animation state
+//Variable to store the animation state
+const [profiles, setProfiles] = useState([]);
+useEffect(() => {
+  fetch("https://web.ics.purdue.edu/~sguddeti/fetch-data.php")
+    .then((res) => res.json())
+    .then((data) => {
+      setProfiles(data);
+      console.log(data)
+    })
+}, []);
+
 const [animation, setAnimation] = useState(false);
-// function to update the animation state
+//function to update the animation state
 const handleAnimation = () => {
   setAnimation(false);
 };
 
-//v ariable to store the mode state
+//Variable to store the mode state
 const [mode, setMode] = useState("light");
-// function to update the mode state
+//function to update the mode state
 const handleModeChange = () => {
   setMode(mode === "light" ? "dark" : "light");
 };
 
-// titles
+// get titles
 const titles = [...new Set(profiles.map((profile) => profile.title))];
 
 const [title, setTitle] = useState("");
-// update the title on change of the drowndrop
+//update the title on change of the drowndrop
 const handleTitleChange = (event) => {
   setTitle(event.target.value);
   setAnimation(true);
 };
 
 const [search, setSearch] = useState("");
-// update the search on change of the input
+//update the search on change of the input
 const handleSearchChange = (event) => {
   setSearch(event.target.value);
   setAnimation(true);
 };
 
-// clear the title and search
+//clear the title and search
 const handleClear = () => {
   setTitle("");
   setSearch("");
   setAnimation(true);
 };
 
-// filter the profiles based on the title
+//filter the profiles based on the title
 const filtedProfiles = profiles.filter(
   (profile) =>
-    (title === "" || profile.title === title) &&
+   (title === "" || profile.title === title) &&
     profile.name.toLowerCase().includes(search.toLowerCase())
 );
 const buttonStyle = {
@@ -98,28 +110,25 @@ return (
     <header>
       <Navbar mode={mode} updateMode={handleModeChange}/>
     </header>
-
     <main className={mode === "light" ? "light" : "dark"}>
       <Wrapper>
         <h1>Profile App</h1>
       </Wrapper>
-
       <Wrapper>
         <About />
-      </Wrapper> 
+      </Wrapper>
       <Wrapper>
         <ProfileForm />
-      </Wrapper> 
-
+      </Wrapper>
       <Wrapper>
         <div className="filter-wrapper">
-          {/* All button in Search bar */}
           <div className="filter--select">
             <label htmlFor="title-select">Select a title:</label>
             <select
               id="title-select"
               onChange={handleTitleChange}
-              value={title}>
+              value={title}
+            >
               <option value="">All</option>
               {titles.map((title) => (
                 <option key={title} value={title}>
@@ -128,8 +137,6 @@ return (
               ))}
             </select>
           </div>
-          
-          {/* Search By */}
           <div className="filter--search">
             <label htmlFor="search">Search by name:</label>
             <input
@@ -139,18 +146,15 @@ return (
               value={search}
             />
           </div>
-          
-          {/* Reset Button */}
           <button onClick={handleClear} style={buttonStyle}>
-            Reset
+            <span className="sr-only">Reset</span>
+            <FontAwesomeIcon icon={faXmark} />
           </button>
         </div>
-
-        {/* Profile Cards */}
         <div className="profile-cards">
           {filtedProfiles.map((profile) => (
             <Card
-              key={profile.email}
+              key={profile.id}
               {...profile}
               animate={animation}
               updateAnimate={handleAnimation}
@@ -158,7 +162,6 @@ return (
           ))}
         </div>
       </Wrapper>
-
     </main>
   </>
 );
