@@ -33,7 +33,7 @@ const ProfileForm = () => {
     if (data.image) formData.append("image", data.image);
     console.log(data.image+"test");
     try{
-        const response = await fetch("https://web.ics.purdue.edu/~zong6/profile-app/send-data.php", {
+        const response = await fetch("https://web.ics.purdue.edu/~sguddeti/send-data.php", {
             method: "POST",
             body: formData,
         });

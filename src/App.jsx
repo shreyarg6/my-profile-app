@@ -47,7 +47,6 @@ const App = () => {
     }
   ];*/}
 
-//Variable to store the animation state
 const [profiles, setProfiles] = useState([]);
 useEffect(() => {
   fetch("https://web.ics.purdue.edu/~sguddeti/fetch-data.php")
@@ -72,7 +71,11 @@ const handleModeChange = () => {
 };
 
 // get titles
-const titles = [...new Set(profiles.map((profile) => profile.title))];
+//const titles = [...new Set(profiles.map((profile) => profile.title))];
+// change this
+const [titles, setTitles] = useState("");
+useEffect()
+
 
 const [title, setTitle] = useState("");
 //update the title on change of the drowndrop
@@ -148,7 +151,7 @@ return (
           </div>
           <button onClick={handleClear} style={buttonStyle}>
             <span className="sr-only">Reset</span>
-            <FontAwesomeIcon icon={faXmark} />
+            {/*<FontAwesomeIcon icon={faXmark} />*/}
           </button>
         </div>
         <div className="profile-cards">
