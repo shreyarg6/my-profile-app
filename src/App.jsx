@@ -50,7 +50,7 @@ const App = () => {
 //Variable to store the animation state
 const [profiles, setProfiles] = useState([]);
 useEffect(() => {
-  fetch("https://web.ics.purdue.edu/~/fetch-data.php")
+  fetch("https://web.ics.purdue.edu/~sguddeti/fetch-data.php")
     .then((res) => res.json())
     .then((data) => {
       setProfiles(data);
