@@ -14,7 +14,7 @@ import { useEffect } from "react";
 import { use } from "react";
 
 const App = () => {
-  //const profiles =[
+  {/*const profiles =[
     {
       img: image1,
       name: 'Percy Jackson',
@@ -45,12 +45,12 @@ const App = () => {
       title: 'Software Engineer',
       email: 'ndangelo04@gmail.com.com'
     }
-  //];
+  ];*/}
 
 //Variable to store the animation state
 const [profiles, setProfiles] = useState([]);
 useEffect(() => {
-  fetch("https://web.ics.purdue.edu/~sguddeti/fetch-data.php")
+  fetch("https://web.ics.purdue.edu/~/fetch-data.php")
     .then((res) => res.json())
     .then((data) => {
       setProfiles(data);
