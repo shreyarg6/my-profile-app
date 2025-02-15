@@ -1,6 +1,7 @@
 import style from '../styles/card.module.css';
 import PropTypes from 'prop-types';
 
+const image_url = "./assets/percy.jpg";
 const Card = ({img, name, title, email, animate, updateAnimate}) => {
 
     return (
