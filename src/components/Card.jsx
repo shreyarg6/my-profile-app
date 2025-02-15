@@ -47,7 +47,7 @@ const Card = ({img, name, title, email, animate, updateAnimate}) => {
                 <p><a href={`mailto:${email}`}>{email}</a></p>
             </div>
         </div>
-    ); */}
+    ) */}
     
 };
 Card.propTypes = {
