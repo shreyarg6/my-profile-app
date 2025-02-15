@@ -49,11 +49,11 @@ const Card = ({img, name, title, email, animate, updateAnimate}) => {
         </div>
     ); */}
     
-}
+};
 Card.propTypes = {
     img: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     title: PropTypes.string,
     email: PropTypes.string.isRequired
-}
+};
 export default Card;
