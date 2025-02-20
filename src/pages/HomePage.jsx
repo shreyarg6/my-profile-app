@@ -1,7 +1,6 @@
 import Card from "../components/Card";
 import Wrapper from "../components/Wrapper";
 import { useState } from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useEffect } from "react";
 import styles from "../styles/home.module.css";
@@ -83,7 +82,6 @@ const HomePage = () => {
         </div>
         <button onClick={handleClear} style={buttonStyle}>
           <span className="sr-only">Reset</span>
-          {/* <FontAwesomeIcon icon={faXmark} /> */}
         </button>
       </div>
       <div className={styles["profile-cards"]}>
@@ -91,12 +89,11 @@ const HomePage = () => {
           <Card key={profile.id} {...profile} />
         ))}
       </div>
-      {count === 0 && <p>No profiles found!</p>}
+      {count === 0 && <p>No profiles found were found!</p>}
       {count > 10 && (
         <div className={styles["pagination"]}>
           <button onClick={() => setPage(page - 1)} disabled={page === 1}>
             <span className="sr-only">Previous</span>
-            {/* <FontAwesomeIcon icon={faChevronLeft} /> */}
           </button>
           <span>
             {page}/{Math.ceil(count / 10)}
@@ -106,7 +103,6 @@ const HomePage = () => {
             disabled={page >= Math.ceil(count / 10)}
           >
             <span className="sr-only">Next</span>
-            {/* <FontAwesomeIcon icon={faChevronRight} /> */}
           </button>
         </div>
       )}
