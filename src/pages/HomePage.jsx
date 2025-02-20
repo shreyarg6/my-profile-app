@@ -37,7 +37,7 @@ const HomePage = () => {
   //fetch the data from the server
   useEffect(() => {
     fetch(
-      `https://web.ics.purdue.edu/~sguddetj/fetch-data-with-filter.php?title=${title}&name=${search}&page=${page}&limit=10`
+      `https://web.ics.purdue.edu/~sguddeti/fetch-data-with-filter.php?title=${title}&name=${search}&page=${page}&limit=10`
     )
       .then((res) => res.json())
       .then((data) => {
