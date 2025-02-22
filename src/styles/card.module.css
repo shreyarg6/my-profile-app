@@ -20,7 +20,7 @@
   &.is-entering {
     opacity: 0;
     transform: scale(0.9);
-    animation: cardEnter 0.5s forwards; /* Apply the animation */  
+    animation: cardEnter 0.5s forwards;
   }
 
   .profile-card__image {

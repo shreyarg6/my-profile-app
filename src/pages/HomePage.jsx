@@ -1,9 +1,9 @@
 import Card from "../components/Card";
 import Wrapper from "../components/Wrapper";
 import { useState } from "react";
-
 import { useEffect } from "react";
 import styles from "../styles/home.module.css";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const [titles, setTitles] = useState([]);
@@ -86,10 +86,12 @@ const HomePage = () => {
       </div>
       <div className={styles["profile-cards"]}>
         {profiles.map((profile) => (
+          <Link to={`/profile/${profile.id}`} key={profile.id}>
           <Card key={profile.id} {...profile} />
+          </Link>
         ))}
       </div>
-      {count === 0 && <p>No profiles found were found!</p>}
+      {count === 0 && <p>No profiles found!</p>}
       {count > 10 && (
         <div className={styles["pagination"]}>
           <button onClick={() => setPage(page - 1)} disabled={page === 1}>

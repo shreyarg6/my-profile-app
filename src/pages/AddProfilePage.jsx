@@ -5,7 +5,7 @@ const AddProfilePage = () => {
 
   return (
         <Wrapper>
-          <h1>Add Profile</h1>
+          <h1>Add a new Profile</h1>
           <ProfileForm />
         </Wrapper>
   );
