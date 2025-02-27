@@ -51,7 +51,7 @@ const ProfileForm = ({ isEdit = false, currentProfile = {} }) => {
     formData.append("title", data.title.trim());
     formData.append("bio", data.bio.trim());
     if (data.image) formData.append("image", data.image);
-    console.log(data.image + "my-profile-app");
+    console.log(data.image + "test");
     try {
       const response = await fetch(
         "https://web.ics.purdue.edu/~sguddeti/send-data-with-id.php",
@@ -132,7 +132,7 @@ const ProfileForm = ({ isEdit = false, currentProfile = {} }) => {
           data.email.trim() === "" ||
           data.title.trim() === "" ||
           data.bio.trim() === "" ||
-          data.image === null
+          (!isEdit && !data.image)
         }
       >
         Submit
