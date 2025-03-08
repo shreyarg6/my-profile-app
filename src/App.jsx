@@ -14,6 +14,7 @@ import ModeContext from "./contexts/ModeContext";
 import { useContext } from "react";
 import { AuthProvider } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ProfileApp from './pages/ProfileApp';
 
 const App = () => {
 

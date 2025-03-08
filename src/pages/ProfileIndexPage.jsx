@@ -8,3 +8,5 @@ const ProfileIndexPage = () => {
 };
 
 export default ProfileIndexPage;
+
+
