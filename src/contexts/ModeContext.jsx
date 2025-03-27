@@ -1,6 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 
-const ModeContext = createContext();
+export const ModeContext = createContext();
 
 export const ModeProvider = ({ children }) => {
       const [mode, setMode] = useState("light");
@@ -16,3 +16,5 @@ export const ModeProvider = ({ children }) => {
 
 };
 export default ModeContext;
+
+export const mode = () => useContext(ModeContext);
