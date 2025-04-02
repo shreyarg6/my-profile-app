@@ -2,7 +2,7 @@ import { useState, useEffect, useContext, useRef } from "react";
 import style from "../styles/ProfileForm.module.css";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
-// import useAuthForm from "../hooks/authFormHook";
+import useAuthForm from "../hooks/authFormHook";
 
 const AuthForm = ({ isRegister = false }) => {
 

@@ -144,6 +144,4 @@ const ProfileForm = ({ isEdit = false, currentProfile = {} }) => {
   );
 };
 
-
-
 export default ProfileForm;
